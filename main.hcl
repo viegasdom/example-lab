@@ -59,14 +59,14 @@ resource "lab" "example" {
       target = resource.terminal.shell
     }
 
+     tab "editor" {
+      panel = "top_left"
+      target = resource.editor.code
+    }
+
     tab "service" {
       panel = "bottom_left"
       target = resource.service.vault_ui
-    }
-
-    tab "editor" {
-      panel = "right"
-      target = resource.editor.code
     }
 
     instructions {
