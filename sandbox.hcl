@@ -50,7 +50,7 @@ resource "container" "ubuntu" {
 }
 
 resource "vm" "test" {
-  disabled = disabled_vm || system("os") == "darwin"
+  disabled = disable_vm || system("os") == "darwin"
 
   config {
     arch = "x86_64" // default to host arch
