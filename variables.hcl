@@ -7,5 +7,5 @@ variable "disable_vm" {
 }
 
 variable "terraform_target" {
-  default = "localhost"
+  default = resource.container.ubuntu
 }
