@@ -33,87 +33,50 @@ resource "task" "manual_installation" {
   }
 }
 
+resource "task" "verify_installation" {
+  prerequisites = [
+    resource.task.manual_installation
+  ]
 
+  config {
+    user   = "root"
+    target = variable.terraform_target
+  }
 
+  condition "help_command" {
+    description = "Use the terraform -help command"
 
+    check {
+      script          = "checks/installation/verify_installation/help_command"
+      failure_message = "'terraform -help' command was not used to explore the possibilities of the CLI"
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-resource "task" "install_terraform" {
-	config {
-		target = resource.container.vault
-		timeout = 10
-		user = "root"
-		group = "root"
-		working_directory = "/"
-	}
-
-	condition "terraform_path" {
-		description = "Terraform is available on the PATH"
-		
-		setup {
-			script = "scripts/setup_terraform_path.sh"
-		}
-		
-		check {
-			script = "scripts/check_terraform_path.sh"
-			failure_message = "Cannot find the terraform binary on the PATH: {{error}}"
-			
-			config {
-				timeout = 60
-			}
-		}
-		
-		solve {
-			script = "scripts/solve_terraform_path.sh"
-		}
-		
-		cleanup {
-			script = "scripts/cleanup_terraform_path.sh"
-		}
-	}
-
-	success_message = "Good job"
+    solve {
+      script = "checks/installation/verify_installation/solve"
+    }
+  }
 }
 
-resource "task" "verify_terraform" {
-	prerequisites = [resource.task.install_terraform]
+resource "task" "terraform_version" {
+  prerequisites = [
+    resource.task.verify_installation
+  ]
 
-	condition "verify" {
-		description = "Run terraform --version"
+  config {
+    user   = "root"
+    target = variable.terraform_target
+  }
 
-		check {
-			script = "scripts/check_terraform_version.sh"
-			failure_message = "Terraform is not installed: {{error}}"
-			
-			config {
-				timeout = 30
-			}
-		}
-	}
-}
+  condition "version_command" {
+    description = "Use the terraform version command"
 
-resource "task" "init" {
-}
+    check {
+      script          = "checks/installation/terraform_version/version_command"
+      failure_message = "'terraform version' command was not used to validate the installed version"
+    }
 
-resource "task" "plan" {
-	prerequisites = [resource.task.init]
-}
-
-resource "task" "apply" {
-	prerequisites = [resource.task.plan]
+    solve {
+      script = "checks/installation/terraform_version/solve"
+    }
+  }
 }
