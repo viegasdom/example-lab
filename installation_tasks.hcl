@@ -3,7 +3,7 @@ resource "task" "manual_installation" {
 
   config {
     user   = "root"
-    target = variable.terraform_target
+    target = resource.container.ubuntu
   }
 
   condition "binary_exists" {
@@ -28,9 +28,9 @@ resource "task" "manual_installation" {
 
     check {
       script          = "scripts/installation/manual_installation/version_latest"
-			variables       = { 
-				name = "terraform" 
-			}
+			// variables       = { 
+			// 	name = "terraform" 
+			// }
       failure_message = "terraform binary is not the latest version"
     }
   }
@@ -43,7 +43,7 @@ resource "task" "verify_installation" {
 
   config {
     user   = "root"
-    target = variable.terraform_target
+    target = resource.container.ubuntu
   }
 
   condition "help_command" {
@@ -67,7 +67,7 @@ resource "task" "terraform_version" {
 
   config {
     user   = "root"
-    target = variable.terraform_target
+    target = resource.container.ubuntu
   }
 
   condition "version_command" {

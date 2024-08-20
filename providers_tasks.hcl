@@ -1,9 +1,11 @@
 resource "task" "install_provider" {
-  prerequisites = resource.chapter.workflow.tasks != null ? values(resource.chapter.workflow.tasks) : []
+  prerequisites = [
+    resource.chapter.workflow
+  ]
 
   config {
     user   = "root"
-    target = variable.terraform_target
+    target = resource.container.ubuntu
   }
 
   condition "provider_added" {
@@ -39,7 +41,7 @@ resource "task" "provider_configuration" {
 
   config {
     user   = "root"
-    target = variable.terraform_target
+    target = resource.container.ubuntu
   }
 
   condition "configuration_added" {

@@ -5,7 +5,3 @@ variable "vm_image" {
 variable "disable_vm" {
   default = true
 }
-
-variable "terraform_target" {
-  default = resource.container.ubuntu
-}

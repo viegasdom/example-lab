@@ -87,10 +87,19 @@ resource "lab" "example" {
       layout = "complex"
     }
 
+    chapter "providers" {
+      title = "Providers"
+      source = resource.chapter.providers
+    }
+
+    chapter "state" {
+      title = "State"
+      source = resource.chapter.state
+    }
+
     chapter "summary" {
       title = "Summary"
       source = resource.chapter.summary
-      layout = "complex"
     }
   }
 }

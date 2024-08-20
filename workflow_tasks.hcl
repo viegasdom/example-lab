@@ -1,9 +1,11 @@
 resource "task" "terraform_init" {
-  prerequisites = resource.chapter.installation.tasks != null ? values(resource.chapter.installation.tasks) : []
+  prerequisites = [
+    resource.chapter.installation
+  ]
 
   config {
     user   = "root"
-    target = variable.terraform_target
+    target = resource.container.ubuntu
   }
 
   condition "init_command" {
@@ -48,7 +50,7 @@ resource "task" "terraform_plan" {
 
   config {
     user   = "root"
-    target = variable.terraform_target
+    target = resource.container.ubuntu
   }
 
   condition "plan_command" {
@@ -72,7 +74,7 @@ resource task "terraform_apply" {
 
   config {
     user   = "root"
-    target = variable.terraform_target
+    target = resource.container.ubuntu
   }
 
   condition "apply_command" {
@@ -85,7 +87,10 @@ resource task "terraform_apply" {
 
     solve {
       script  ="scripts/workflow/terraform_apply/solve"
-      timeout = 300
+
+      config {
+        timeout = 300
+      }
     }
   }
 
@@ -133,7 +138,7 @@ resource "task" "update_resources" {
 
   config {
     user   = "root"
-    target = variable.terraform_target
+    target = resource.container.ubuntu
   }
 
   condition "update_code" {
@@ -182,12 +187,12 @@ resource "task" "update_resources" {
 
 resource "task" "terraform_destroy" {
   prerequisites = [
-    resource.task.update_resources.meta.id
+    resource.task.update_resources
   ]
 
   config {
     user   = "root"
-    target = variable.terraform_target
+    target = resource.container.ubuntu
   }
 
   condition "destroy_command" {

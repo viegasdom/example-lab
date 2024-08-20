@@ -1,9 +1,11 @@
 resource "task" "viewing_state" {
-  prerequisites = resource.chapter.providers.tasks != null ? values(resource.chapter.providers.tasks) : []
+  prerequisites = [
+    resource.chapter.providers
+  ]
 
   config {
     user   = "root"
-    target = variable.terraform_target
+    target = resource.container.ubuntu
   }
 
   condition "show_command" {
@@ -40,7 +42,7 @@ resource "task" "list_state" {
 
   config {
     user   = "root"
-    target = variable.terraform_target
+    target = resource.container.ubuntu
   }
 
   condition "list_command" {
@@ -64,7 +66,7 @@ resource "task" "show_state" {
 
   config {
     user   = "root"
-    target = variable.terraform_target
+    target = resource.container.ubuntu
   }
 
   condition "show_command" {
