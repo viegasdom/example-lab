@@ -87,9 +87,9 @@ resource "lab" "example" {
       layout = "complex"
     }
 
-    chapter "conclusion" {
-      title = "Conclusion"
-      source = resource.chapter.conclusion
+    chapter "summary" {
+      title = "Summary"
+      source = resource.chapter.summary
       layout = "complex"
     }
   }
