@@ -16,7 +16,9 @@ resource "task" "install_provider" {
 
     solve {
       script  = "checks/providers/install_provider/solve"
-      timeout = 120
+      config {
+        timeout = 120
+      }
     }
   }
 

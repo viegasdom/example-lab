@@ -16,7 +16,9 @@ resource "task" "terraform_init" {
 
     solve {
       script  ="scripts/workflow/terraform_init/solve"
-      timeout = 120
+      config {
+        timeout = 120
+      }
     }
   }
 
@@ -144,7 +146,9 @@ resource "task" "update_resources" {
 
     solve {
       script  ="scripts/workflow/update_resources/solve"
-      timeout = 300
+      config {
+        timeout = 300
+      }
     }
   }
 

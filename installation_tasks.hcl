@@ -16,7 +16,10 @@ resource "task" "manual_installation" {
 
     solve {
       script  = "scripts/installation/manual_installation/solve"
-      timeout = 60
+      
+			config {
+				timeout = 60
+			}
     }
   }
 
