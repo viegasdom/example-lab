@@ -2,7 +2,7 @@
 
 The module environment contains everything needed to complete the module. If you are familiar with VSCode everything should look very familiar.
 
-![layout](/assets/images/layout.png "layout")
+![layout](/assets/layout.png "layout")
 
 The environment consists of 3 main parts:
 
@@ -15,12 +15,12 @@ The environment consists of 3 main parts:
 The documentation will be the tab that is opened by default in the environment.
 This will guide you through the content, and is where you will find the instructions for the tasks you need to complete in order to proceed.
 
-![documentation](/assets/images/documentation.png "documentation")
+![documentation](/assets/documentation.png "documentation")
 
 You can use the index to the left of the content to navigate between the sections.
 Each section will contain text and videos to explain the subject, and is followed by a task.
 
-![task](/assets/images/task.png "task")
+![task](/assets/task.png "task")
 
 The task contains the instructions that need to be followed in order to complete the task.
 It also shows which conditions need to be met for it to be successful.
@@ -36,11 +36,11 @@ If you are revisiting the module but do not want to redo all of the tasks, you c
 The editor is a full VSCode editor running in the browser. You can use this to create, edit and delete files from the workspace.
 File can be selected from the file tree on the left, and will open in the main area as a new tab.
 
-![editor](/assets/images/editor.png "editor")
+![editor](/assets/editor.png "editor")
 
 ## Terminal
 
 In order to complete some of the tasks you will need to use the command line. 
 This is exposed through the "terminal" tab, which gives you a shall on the machine where the Terraform workspace is located.
 
-![terminal](/assets/images/terminal.png "terminal")
+![terminal](/assets/terminal.png "terminal")
