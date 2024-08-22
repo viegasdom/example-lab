@@ -28,10 +28,10 @@ resource "editor" "code" {
   ]
 
   theme = "Night Owl (No Italics)"
-  settings = file("assets/settings.json")
+  settings = file("files/settings.json")
   
 	workspace "assets" {
-    directory = "assets"
+    directory = "files"
   }
 
   workspace "vault_config" {
@@ -43,7 +43,7 @@ resource "editor" "code" {
 resource "note" "addendum" {
   title = "Addendum"
   
-	file = "assets/notes/addendum.md"
+	file = "notes/addendum.md"
 	variables = {
 		version = "0.12"
 	}

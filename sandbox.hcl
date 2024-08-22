@@ -8,13 +8,13 @@ resource "aws_account" "my_account" {
 	regions = ["eu-west-1"]
 	services = ["s3", "ec2", "route53"]
 	
-	user_iam_policy = file("assets/user_iam_policy.json")
+	user_iam_policy = file("files/user_iam_policy.json")
 	
 	account_managed_policies = [
 		"arn:aws:iam::aws:policy/IAMFullAccess"
 	]
 	
-	account_scp_policy = file("assets/account_scp_policy.json")
+	account_scp_policy = file("files/account_scp_policy.json")
 }
 
 resource "azure_subscription" "my_subscription"{
