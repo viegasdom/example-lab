@@ -1,3 +1,17 @@
+resource "quiz" "introduction" {
+	questions = [
+		resource.multiple_choice_question.terraform_workflow,
+	]
+}
+
+resource "multiple_choice_question" "terraform_workflow" {
+	question = "Which stages does the core Terraform workflow consist of?"
+	answer = ["write", "plan", "apply"]
+	distractors = ["deploy", "email"]
+	
+	hints = []
+}
+
 resource "quiz" "installation" {
 	questions = [
 		resource.short_answer_question.capital_france, 
