@@ -72,5 +72,5 @@ The dependency lock file is a file that belongs to the configuration as a whole,
 For that reason Terraform creates it and expects to find it in your current working directory when you run Terraform, which is also the directory containing the `.tf` files for the root module of your configuration.
 
 <instruqt-task id="install_provider">
-  Add the `vault` <a href="https://registry.terraform.io/providers/hashicorp/vault/latest" target="_blank">provider</a> to the current Terraform configuration and initialize the workspace.
+  Add the `vault` [provider](https://registry.terraform.io/providers/hashicorp/vault/latest) to the current Terraform configuration and initialize the workspace.
 </instruqt-task>
