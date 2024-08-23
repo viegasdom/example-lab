@@ -4,9 +4,9 @@ resource "chapter" "introduction" {
   page "terraform" {
     file = "instructions/introduction/what_is_terraform.md"
 
-    quizzes = {
-      "introduction" = resource.quiz.introduction
-    }
+    // quizzes = {
+    //   "introduction" = resource.quiz.introduction
+    // }
   }
 
   page "platform" {

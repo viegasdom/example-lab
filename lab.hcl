@@ -23,8 +23,22 @@ resource "lab" "example" {
     }
   }
 
-  layout "minimal" {
+  layout "default" {
     default = true
+
+    source = module.layouts.output.minimal
+
+    tab "terminal-a" {
+      panel = "left"
+      target = resource.terminal.shell
+    }
+
+    instructions {
+      panel = "right"
+    }
+  }
+
+  layout "minimal" {
     source = module.layouts.output.minimal
 
     tab "terminal-a" {
