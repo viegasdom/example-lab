@@ -23,10 +23,10 @@ resource "lab" "example" {
     }
   }
 
-  layout "default" {
+  layout "original" {
     default = true
 
-    source = module.layouts.output.minimal
+    source = module.layouts.output.original
 
     tab "terminal-a" {
       panel = "left"

@@ -1,4 +1,4 @@
-resource "layout" "default" {
+resource "layout" "original" {
   column "left" {
   }
 
