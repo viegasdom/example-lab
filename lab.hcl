@@ -23,9 +23,17 @@ resource "lab" "example" {
     }
   }
 
-  layout "original" {
-    default = true
+  layout "minimal" {
+     default = true
+     
+    source = module.layouts.output.minimal
 
+    instructions {
+      panel = "main"
+    }
+  }
+
+  layout "original" {
     source = module.layouts.output.original
 
     tab "terminal-a" {
@@ -35,29 +43,6 @@ resource "lab" "example" {
 
     instructions {
       panel = "right"
-    }
-  }
-
-  layout "minimal" {
-    source = module.layouts.output.minimal
-
-    tab "terminal-a" {
-      panel = "main"
-      target = resource.terminal.shell
-    }
-
-    tab "service" {
-      panel = "main"
-      target = resource.service.vault_ui
-    }
-
-    tab "editor" {
-      panel = "main"
-      target = resource.editor.code
-    }
-
-    instructions {
-      panel = "main"
     }
   }
 
