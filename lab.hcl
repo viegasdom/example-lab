@@ -25,7 +25,7 @@ resource "lab" "example" {
 
   layout "minimal" {
      default = true
-     
+
     source = module.layouts.output.minimal
 
     instructions {
@@ -73,32 +73,37 @@ resource "lab" "example" {
     chapter "introduction" {
       title = "Introduction"
       source = resource.chapter.introduction
+      layout = "minimal"
     }
 
     chapter "installation" {
       title = "Installation"
       source = resource.chapter.installation
+      layout = "default"
     }
 
     chapter "workflow" {
       title = "Workflow"
       source = resource.chapter.workflow
-      layout = "complex"
+      layout = "default"
     }
 
     chapter "providers" {
       title = "Providers"
       source = resource.chapter.providers
+      layout = "default"
     }
 
     chapter "state" {
       title = "State"
       source = resource.chapter.state
+      layout = "default"
     }
 
     chapter "summary" {
       title = "Summary"
       source = resource.chapter.summary
+      layout = "minimal"
     }
   }
 }
