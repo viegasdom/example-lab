@@ -79,19 +79,19 @@ resource "lab" "example" {
     chapter "installation" {
       title = "Installation"
       source = resource.chapter.installation
-      layout = "default"
+      layout = "original"
     }
 
     chapter "workflow" {
       title = "Workflow"
       source = resource.chapter.workflow
-      layout = "default"
+      layout = "original"
     }
 
     chapter "providers" {
       title = "Providers"
       source = resource.chapter.providers
-      layout = "default"
+      layout = "original"
     }
 
     chapter "state" {
