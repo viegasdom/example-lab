@@ -41,6 +41,11 @@ resource "lab" "example" {
       target = resource.terminal.shell
     }
 
+    tab "addendum" {
+      panel = "left"
+      target = resource.note.addendum
+    }
+
     instructions {
       panel = "right"
     }
