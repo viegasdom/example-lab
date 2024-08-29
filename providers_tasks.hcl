@@ -12,12 +12,12 @@ resource "task" "install_provider" {
     description = "The vault provider is added to the code"
 
     check {
-      script          = "checks/providers/install_provider/provider_added"
+      script          = "scripts/providers/install_provider/provider_added"
       failure_message = "The \"hashicorp/vault\" provider was not added to required_providers"
     }
 
     solve {
-      script  = "checks/providers/install_provider/solve"
+      script  = "scripts/providers/install_provider/solve"
       config {
         timeout = 120
       }
@@ -28,7 +28,7 @@ resource "task" "install_provider" {
     description = "The vault provider is installed"
 
     check {
-      script          = "checks/providers/install_provider/provider_installed"
+      script          = "scripts/providers/install_provider/provider_installed"
       failure_message = "the vault provider was not correctly initialized"
     }
   }
@@ -48,12 +48,12 @@ resource "task" "provider_configuration" {
     description = "The provider configuration is added"
 
     check {
-      script          = "checks/providers/provider_configuration/configuration_added"
+      script          = "scripts/providers/provider_configuration/configuration_added"
       failure_message = "The provider configuration does not specify the Vault address"
     }
 
     solve {
-      script = "checks/providers/provider_configuration/solve"
+      script = "scripts/providers/provider_configuration/solve"
     }
   }
 }

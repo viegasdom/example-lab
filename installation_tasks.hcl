@@ -50,12 +50,12 @@ resource "task" "verify_installation" {
     description = "Use the terraform -help command"
 
     check {
-      script          = "checks/installation/verify_installation/help_command"
+      script          = "scripts/installation/verify_installation/help_command"
       failure_message = "'terraform -help' command was not used to explore the possibilities of the CLI"
     }
 
     solve {
-      script = "checks/installation/verify_installation/solve"
+      script = "scripts/installation/verify_installation/solve"
     }
   }
 }
@@ -74,12 +74,12 @@ resource "task" "terraform_version" {
     description = "Use the terraform version command"
 
     check {
-      script          = "checks/installation/terraform_version/version_command"
+      script          = "scripts/installation/terraform_version/version_command"
       failure_message = "'terraform version' command was not used to validate the installed version"
     }
 
     solve {
-      script = "checks/installation/terraform_version/solve"
+      script = "scripts/installation/terraform_version/solve"
     }
   }
 }
