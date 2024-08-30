@@ -4,6 +4,7 @@ resource "quiz" "introduction" {
 	]
 
 	attempts = 3
+	show_hints = true
 }
 
 resource "multiple_choice_question" "terraform_workflow" {
