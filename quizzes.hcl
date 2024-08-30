@@ -9,7 +9,13 @@ resource "multiple_choice_question" "terraform_workflow" {
 	answer = ["write", "plan", "apply"]
 	distractors = ["deploy", "email"]
 	
-	hints = []
+	attempts = 3
+
+	hints = [
+		"First you need to ... the configuration",
+		"Then you need to ... the changes",
+		"Finally you ... them"
+	]
 }
 
 resource "quiz" "installation" {
