@@ -2,14 +2,14 @@ resource "quiz" "introduction" {
 	questions = [
 		resource.multiple_choice_question.terraform_workflow,
 	]
+
+	attempts = 3
 }
 
 resource "multiple_choice_question" "terraform_workflow" {
 	question = "Which stages does the core Terraform workflow consist of?"
 	answer = ["write", "plan", "apply"]
 	distractors = ["deploy", "email"]
-	
-	attempts = 3
 
 	hints = [
 		"First you need to ... the configuration",
