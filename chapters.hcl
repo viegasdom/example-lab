@@ -4,9 +4,9 @@ resource "chapter" "introduction" {
   page "terraform" {
     file = "instructions/introduction/what_is_terraform.md"
 
-    // quizzes = {
-    //   "introduction" = resource.quiz.introduction
-    // }
+    validation = {
+      "introduction" = resource.quiz.introduction
+    }
   }
 
   page "platform" {
@@ -24,7 +24,7 @@ resource "chapter" "installation" {
   page "manual_installation" {
     file = "instructions/installation/manual_installation.md"
 
-    tasks = {
+    validation = {
       manual_installation = resource.task.manual_installation
     }
   }
@@ -32,7 +32,7 @@ resource "chapter" "installation" {
   page "verify_installation" {
     file = "instructions/installation/verify_installation.md"
 
-    tasks = {
+    validation = {
       verify_installation = resource.task.verify_installation
     }
   }
@@ -40,7 +40,7 @@ resource "chapter" "installation" {
   page "terraform_version" {
     file = "instructions/installation/terraform_version.md"
 
-    tasks = {
+    validation = {
       terraform_version   = resource.task.terraform_version
     }
   }
@@ -52,7 +52,7 @@ resource "chapter" "workflow" {
   page "terraform_init" {
     file = "instructions/workflow/terraform_init.md"
 
-    tasks = {
+    validation = {
       terraform_init    = resource.task.terraform_init
     }
   }
@@ -60,7 +60,7 @@ resource "chapter" "workflow" {
   page "terraform_plan" {
     file = "instructions/workflow/terraform_plan.md"
 
-    tasks = {
+    validation = {
       terraform_plan    = resource.task.terraform_plan
     }
   }
@@ -68,7 +68,7 @@ resource "chapter" "workflow" {
   page "terraform_apply" {
     file = "instructions/workflow/terraform_apply.md"
 
-    tasks = {
+    validation = {
       terraform_apply   = resource.task.terraform_apply
     }
   }
@@ -76,7 +76,7 @@ resource "chapter" "workflow" {
   page "update_resources" {
     file = "instructions/workflow/update_resources.md"
 
-    tasks = {
+    validation = {
       update_resources  = resource.task.update_resources
     }
   }
@@ -84,7 +84,7 @@ resource "chapter" "workflow" {
   page "terraform_destroy" {
     file = "instructions/workflow/terraform_destroy.md"
 
-    tasks = {
+    validation = {
       terraform_destroy = resource.task.terraform_destroy
     }
   }
@@ -96,7 +96,7 @@ resource "chapter" "providers" {
   page "install_provider" {
     file = "instructions/providers/install_provider.md"
 
-    tasks = {
+    validation = {
       install_provider       = resource.task.install_provider
     }
   }
@@ -104,7 +104,7 @@ resource "chapter" "providers" {
   page "provider_configuration" {
     file = "instructions/providers/provider_configuration.md"
 
-    tasks = {
+    validation = {
       provider_configuration = resource.task.provider_configuration
     }
   }
@@ -116,7 +116,7 @@ resource "chapter" "state" {
   page "viewing_state" {
     file = "instructions/state/viewing_state.md"
 
-    tasks = {
+    validation = {
       viewing_state = resource.task.viewing_state
     }
   }
@@ -124,7 +124,7 @@ resource "chapter" "state" {
   page "list_state" {
     file = "instructions/state/list_state.md"
 
-    tasks = {
+    validation = {
       list_state    = resource.task.list_state
     }
   }
@@ -132,7 +132,7 @@ resource "chapter" "state" {
   page "show_state" {
     file = "instructions/state/show_state.md"
 
-    tasks = {
+    validation = {
       show_state    = resource.task.show_state
     }
   }
