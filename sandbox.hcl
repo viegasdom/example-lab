@@ -34,7 +34,17 @@ resource "aws_account" "my_account" {
 resource "azure_subscription" "my_subscription"{
 	regions = ["westeurope"]
 	services = ["Microsoft.Compute"]
-	roles = ["Contributor"]
+	
+  
+  user {
+    name = "user"
+    roles = ["Contributor"]
+  }
+
+  service_principal {
+    name = "admin"
+    roles = ["Owner"]
+  }
 }
 
 resource "network" "main" {
