@@ -1,4 +1,4 @@
 resource "layout" "minimal" {
-  column "main" {
+  column "instructions" {
   }
 }

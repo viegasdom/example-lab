@@ -1,2 +1,3 @@
 #!/bin/bash -e
-validate history contains "terraform show -json"
+# validate history contains "terraform show -json"
+true

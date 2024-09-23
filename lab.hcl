@@ -5,7 +5,7 @@ resource "lab" "example" {
   languages = ["en_US", "es_ES"]
   
   settings {
-    theme = "default"
+    theme = "modern_dark"
 
     timelimit {
       duration = 60
@@ -29,7 +29,7 @@ resource "lab" "example" {
     source = module.layouts.output.minimal
 
     instructions {
-      panel = "main"
+      panel = "instructions"
     }
   }
 
@@ -37,17 +37,27 @@ resource "lab" "example" {
     source = module.layouts.output.original
 
     tab "terminal-a" {
-      panel = "left"
+      panel = "sandbox"
       target = resource.terminal.shell
     }
 
-    // tab "addendum" {
-    //   panel = "left"
-    //   target = resource.note.addendum
-    // }
+    tab "addendum" {
+      panel = "sandbox"
+      target = resource.note.addendum
+    }
+
+    tab "docs_same" {
+      panel = "sandbox"
+      target = resource.external_website.iframe_same_window
+    }
+
+    tab "docs_new" {
+      panel = "sandbox"
+      target = resource.external_website.iframe_new_window
+    }
 
     instructions {
-      panel = "right"
+      panel = "instructions"
     }
   }
 
@@ -55,22 +65,22 @@ resource "lab" "example" {
     source = module.layouts.output.complex
 
     tab "terminal-a" {
-      panel = "top_left"
+      panel = "sandbox_top"
       target = resource.terminal.shell
     }
 
      tab "editor" {
-      panel = "top_left"
+      panel = "sandbox_top"
       target = resource.editor.code
     }
 
     tab "service" {
-      panel = "bottom_left"
+      panel = "sandbox_bottom"
       target = resource.service.vault_ui
     }
 
     instructions {
-      panel = "right"
+      panel = "instructions"
     }
   }
 
@@ -102,7 +112,7 @@ resource "lab" "example" {
     chapter "state" {
       title = "State"
       source = resource.chapter.state
-      layout = "default"
+      layout = "original"
     }
 
     chapter "summary" {

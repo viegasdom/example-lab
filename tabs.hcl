@@ -2,27 +2,28 @@ resource "terminal" "shell" {
   title = "Vault terminal"
 
   target = resource.container.vault
-  shell = "/usr/bin/zsh"
+  shell = "/bin/sh"
   user = "root"
   group = "root"
   prompt = "%%{%f%b%k%}$(build_prompt)"
   theme = "dracula"
-  working_directory = "/app"
-	command = ["watch", "-n", "1", "ls -lha"]
+  working_directory = "/root"
+  #command = ["watch", "-n", "1", "ls -lha"]
 }
 
 resource "service" "vault_ui" {
   title = "Vault UI"
 
-	target = resource.container.vault
-	port = 8200
-	path = "/ui"
+  target = resource.container.vault
+  scheme = "http"
+  port = 8200
+  path = "/ui"
 }
 
 resource "editor" "code" {
   title = "Visual Studio Code"
 
-	extensions = [
+  extensions = [
     "golang.go",
     "sdras.night-owl"
   ]
@@ -30,7 +31,7 @@ resource "editor" "code" {
   theme = "Night Owl (No Italics)"
   settings = file("files/settings.json")
   
-	workspace "assets" {
+  workspace "assets" {
     directory = "files"
   }
 
@@ -43,8 +44,30 @@ resource "editor" "code" {
 resource "note" "addendum" {
   title = "Addendum"
   
-	file = "notes/addendum.md"
-	variables = {
-		version = "0.12"
-	}
+  file = "notes/addendum.md"
+  variables = {
+    version = "0.12"
+  }
+}
+
+resource "external_website" "iframe_same_window" {
+  title = "Iframe website"
+
+  url = "https://docs.instruqt.com"
+}
+
+resource "external_website" "iframe_new_window" {
+  title = "Iframe website"
+
+  url = "https://docs.instruqt.com"
+
+  open_in_new_window = true
+}
+
+resource "virtual_browser" "virtual" {
+  title = "Virtual browser website"
+
+  url = "https://docs.instruqt.com"
+  
+  agent = "firefox"
 }

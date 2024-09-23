@@ -3,7 +3,7 @@ resource "quiz" "introduction" {
 		resource.multiple_choice_question.terraform_workflow,
 	]
 
-	attempts = 3
+	// attempts = 3
 	show_hints = true
 }
 

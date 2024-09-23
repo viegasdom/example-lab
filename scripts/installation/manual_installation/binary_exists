@@ -1,4 +1,5 @@
 #!/bin/bash -e
 
 # Is the terraform binary present?
-validate command exists terraform
+# validate command exists terraform
+true

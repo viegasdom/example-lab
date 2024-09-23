@@ -1,20 +1,19 @@
 resource "layout" "complex" {
-  column "left" {
-	  # The width of a column or the height of a row can be specified either in
-	  # percentages or pixels.
-    width = "50%"
+  column "sandbox" {
+	  # The width of a column or the height of a row can be specified in percentages.
+    width = 50
 
-    row "top_left" {
+    row "sandbox_top" {
 	    # The width and height values can also be interpolated.
-      height = "${216/2}px"
+      height = 50
     }
 
-    row "bottom_left" {
+    row "sandbox_bottom" {
       height = 50
     }
   }
 
-  column "right" {
+  column "instructions" {
     width = 50
   }
 }

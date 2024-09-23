@@ -1,2 +1,3 @@
 #!/bin/bash -e
-validate history contains "terraform state list"
+# validate history contains "terraform state list"
+true

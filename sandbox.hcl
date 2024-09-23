@@ -1,7 +1,21 @@
 resource "gcp_project" "my_project" {
 	regions = ["europe-west1"]
 	services = ["compute.googleapis.com"]
-	roles = ["roles/owner", "roles/storageEditor"]
+
+  user {
+    name = "admin"
+    roles = ["roles/editor"]
+  }
+
+  user {
+    name = "user"
+    roles = ["roles/viewer"]
+  }
+
+  service_account {
+    name = "admin"
+    roles = ["roles/editor"]
+  }
 }
 
 resource "aws_account" "my_account" {
@@ -30,6 +44,11 @@ resource "network" "main" {
 resource "container" "vault" {
   image {
     name = "hashicorp/vault"
+  }
+
+  port {
+    local = 8200
+    host  = 8200
   }
 
 	network {

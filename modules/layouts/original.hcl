@@ -1,7 +1,7 @@
 resource "layout" "original" {
-  column "left" {
+  column "sandbox" {
   }
 
-  column "right" {
+  column "instructions" {
   }
 }

@@ -33,5 +33,5 @@ You can print a colon-separated list of locations in your PATH by executing `ech
 Move the Terraform binary to one of the listed locations e.g. `mv terraform /usr/local/bin/`.
 
 <instruqt-task id="manual_installation">
-  Install the latest version of Terraform for Linux (AMD64) by downloading it from the [downloads](https://developer.hashicorp.com/terraform/downloads?product_intent=terraform) page and installing it on the PATH.
+  Install the latest version of Terraform for <a href="https://www.google.com">hi</a> Linux (AMD64) by downloading it from the [downloads](https://developer.hashicorp.com/terraform/downloads?product_intent=terraform) page and installing it on the PATH.
 </instruqt-task>
