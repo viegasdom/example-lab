@@ -86,8 +86,8 @@ resource "vm" "test" {
   }
 
   resources {
-    cpu = 2 // cores
-    memory = 2048 // mb
+    cpu = 2000 // CPU shares, 1 CPU core = 1000
+    memory = 2024
   }
 
   disk {
