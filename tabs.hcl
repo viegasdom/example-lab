@@ -50,6 +50,69 @@ resource "note" "addendum" {
   }
 }
 
+resource "note" "note2" {
+  title = "Note 2"
+  
+  file = "notes/addendum.md"
+  variables = {
+    version = "0.12"
+  }
+}
+
+resource "note" "note3" {
+  title = "Note 3"
+  
+  file = "notes/addendum.md"
+  variables = {
+    version = "0.12"
+  }
+}
+
+resource "note" "note4" {
+  title = "Note 4"
+  
+  file = "notes/addendum.md"
+  variables = {
+    version = "0.12"
+  }
+}
+
+resource "note" "note5" {
+  title = "Note 5"
+  
+  file = "notes/addendum.md"
+  variables = {
+    version = "0.12"
+  }
+}
+
+resource "note" "note6" {
+  title = "Note 6"
+  
+  file = "notes/addendum.md"
+  variables = {
+    version = "0.12"
+  }
+}
+
+resource "note" "note7" {
+  title = "Note 7"
+  
+  file = "notes/addendum.md"
+  variables = {
+    version = "0.12"
+  }
+}
+
+resource "note" "note8" {
+  title = "Note 8"
+  
+  file = "notes/addendum.md"
+  variables = {
+    version = "0.12"
+  }
+}
+
 resource "external_website" "iframe_same_window" {
   title = "Iframe website"
 

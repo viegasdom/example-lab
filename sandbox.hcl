@@ -78,57 +78,57 @@ resource "container" "ubuntu" {
 	}
 }
 
-resource "vm" "test" {
-  disabled = variable.disable_vm || system("os") == "darwin"
+// resource "vm" "test" {
+//   disabled = variable.disable_vm || system("os") == "darwin"
 
-  config {
-    arch = "x86_64" // default to host arch
-  }
+//   config {
+//     arch = "x86_64" // default to host arch
+//   }
 
-  resources {
-    cpu = 2000 // CPU shares, 1 CPU core = 1000
-    memory = 2024
-  }
+//   resources {
+//     cpu = 2000 // CPU shares, 1 CPU core = 1000
+//     memory = 2024
+//   }
 
-  disk {
-    boot = true
-    type = "qcow2"
-    source = variable.vm_image
-  }
+//   disk {
+//     boot = true
+//     type = "qcow2"
+//     source = variable.vm_image
+//   }
 
-  volume {
-    source = "/tmp"
-    destination = "/mnt/test"
-  }
+//   volume {
+//     source = "/tmp"
+//     destination = "/mnt/test"
+//   }
 
-  network {
-    id = resource.network.main.meta.id
-  }
+//   network {
+//     id = resource.network.main.meta.id
+//   }
 
-  port {
-    local  = 22
-    host   = 2201
-  }
+//   port {
+//     local  = 22
+//     host   = 2201
+//   }
 
-  vnc {
-    port = 8999
-  }
+//   vnc {
+//     port = 8999
+//   }
 
-  cloud_init {
-    meta_data = <<-EOF
-    instance-id: instruqt
-    local-hostname: instruqt
-    EOF
+//   cloud_init {
+//     meta_data = <<-EOF
+//     instance-id: instruqt
+//     local-hostname: instruqt
+//     EOF
 
-    user_data = <<-EOF
-    #cloud-config
-    password: password
-    chpasswd:
-      expire: False
-    debug: True
-    disable_root: False
-    ssh_deletekeys: False
-    ssh_pwauth: True
-    EOF
-  }
-}
+//     user_data = <<-EOF
+//     #cloud-config
+//     password: password
+//     chpasswd:
+//       expire: False
+//     debug: True
+//     disable_root: False
+//     ssh_deletekeys: False
+//     ssh_pwauth: True
+//     EOF
+//   }
+// }

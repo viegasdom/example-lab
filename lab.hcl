@@ -56,6 +56,11 @@ resource "lab" "example" {
       target = resource.external_website.iframe_new_window
     }
 
+    tab "editor" {
+      panel = "sandbox"
+      target = resource.editor.code
+    }
+
     instructions {
       panel = "instructions"
     }
@@ -69,7 +74,7 @@ resource "lab" "example" {
       target = resource.terminal.shell
     }
 
-     tab "editor" {
+    tab "editor" {
       panel = "sandbox_top"
       target = resource.editor.code
     }
@@ -81,6 +86,69 @@ resource "lab" "example" {
 
     instructions {
       panel = "instructions"
+    }
+  }
+
+  layout "stress" {
+    source = module.layouts.output.stress
+
+    instructions {
+      panel = "left_top"
+    }
+
+    tab "note4" {
+      panel = "left_top"
+      target = resource.note.note4
+    }
+
+    tab "note2" {
+      panel = "left_bottom_left"
+      target = resource.note.note2
+    }
+
+    tab "note3" {
+      panel = "left_bottom_right"
+      target = resource.note.note3
+    }
+
+    tab "note5" {
+      panel = "center_top_left"
+      target = resource.note.note5
+    }
+
+    tab "note6" {
+      panel = "center_top_right"
+      target = resource.note.note6
+    }
+
+    tab "note7" {
+      panel = "center_bottom"
+      target = resource.note.note7
+    }
+
+    tab "note8" {
+      panel = "center_small"
+      target = resource.note.note8
+    }
+
+    tab "terminal-a" {
+      panel = "right_top"
+      target = resource.terminal.shell
+    }
+
+    tab "addendum" {
+      panel = "right_bottom_left"
+      target = resource.note.addendum
+    }
+
+    tab "docs_same" {
+      panel = "right_bottom_right"
+      target = resource.external_website.iframe_same_window
+    }
+
+    tab "docs_new" {
+      panel = "right_bottom_right"
+      target = resource.external_website.iframe_new_window
     }
   }
 

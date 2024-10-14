@@ -9,3 +9,7 @@ output "complex" {
 output "original" {
   value = resource.layout.original
 }
+
+output "stress" {
+  value = resource.layout.stress
+}

@@ -18,4 +18,6 @@ The core Terraform workflow consists of three stages:
 - **Plan**: Terraform creates an execution plan describing the infrastructure it will create, update, or destroy based on the existing infrastructure and your configuration.
 - **Apply**: On approval, Terraform performs the proposed operations in the correct order, respecting any resource dependencies. For example, if you update the instruqt-api-table of a VPC and change the number of virtual machines in that VPC, Terraform will recreate the VPC before scaling the virtual machines.
 
-<instruqt-quiz id="introduction"></instruqt-quiz>
+<instruqt-quiz id="introduction">
+  Hey some small intro description of this quiz.
+</instruqt-quiz>

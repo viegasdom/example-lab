@@ -1,6 +1,7 @@
 resource "quiz" "introduction" {
 	questions = [
 		resource.multiple_choice_question.terraform_workflow,
+		resource.single_choice_question.terraform_creator,
 	]
 
 	// attempts = 3
@@ -16,6 +17,18 @@ resource "multiple_choice_question" "terraform_workflow" {
 		"First you need to ... the configuration",
 		"Then you need to ... the changes",
 		"Finally you ... them"
+	]
+}
+
+resource "single_choice_question" "terraform_creator" {
+	question = "Which company built Terraform?"
+	answer = "HashiCorp"
+	distractors = ["Red Hat", "IBM", "Microsoft", "Spacelift"]
+
+	hints = [
+		"Mitchell Hashimoto and Armon Dadgar founded this company",
+		"The company is known for other popular tools like Vagrant and Vault",
+		"The company name starts with an 'H'"
 	]
 }
 

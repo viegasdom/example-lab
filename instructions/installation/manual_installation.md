@@ -10,6 +10,8 @@ For the purposes of this course we are using the opensource Terraform CLI.
 The command line interface to Terraform is the terraform command, which accepts a variety of subcommands such as terraform init or terraform plan.
 We refer to the `terraform` command line tool as "Terraform CLI". This terminology is often used to distinguish it from other components you might use in the Terraform product family, such as Terraform Cloud or the various Terraform providers, which are developed and released separately from Terraform CLI.
 
+Open the <instruqt-switch-tab-button id="docs_same">Documentation</instruqt-switch-tab-button> tab.
+
 To use Terraform you will need to install it. HashiCorp distributes Terraform as a binary package. You can also install Terraform using popular package managers for the different operating systems.
 For the exercises, we are going to install Terraform manually.
 
@@ -23,7 +25,7 @@ From the command line, we can download the package by using either curl or wget.
   <instruqt-code title="curl" language="shell">
     curl -L -o terraform.zip &lt;download url&gt;
   </instruqt-code>
-</CodeGroup>
+</instruqt-code-group>
 
 After downloading Terraform, you can unzip the package using `unzip terraform.zip`. 
 Terraform runs as a single binary named `terraform`, so any other files in the package can be safely removed and Terraform will still function.
