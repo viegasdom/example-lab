@@ -2,18 +2,15 @@ resource "gcp_project" "my_project" {
 	regions = ["europe-west1"]
 	services = ["compute.googleapis.com"]
 
-  user {
-    name = "admin"
+  user "admin" {
     roles = ["roles/editor"]
   }
 
-  user {
-    name = "user"
+  user "user" {
     roles = ["roles/viewer"]
   }
 
-  service_account {
-    name = "admin"
+  service_account "admin" {
     roles = ["roles/editor"]
   }
 }
@@ -36,13 +33,11 @@ resource "azure_subscription" "my_subscription"{
 	services = ["Microsoft.Compute"]
 	
   
-  user {
-    name = "user"
+  user "user" {
     roles = ["Contributor"]
   }
 
-  service_principal {
-    name = "admin"
+  service_principal "admin" {
     roles = ["Owner"]
   }
 }
