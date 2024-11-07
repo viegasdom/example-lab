@@ -20,10 +20,10 @@ From the command line, we can download the package by using either curl or wget.
 
 <instruqt-code-group copy="true" run="true">
   <instruqt-code title="wget" language="shell">
-    wget -O terraform.zip &lt;download url&gt;
+    wget -O terraform.zip <download url>
   </instruqt-code>
   <instruqt-code title="curl" language="shell">
-    curl -L -o terraform.zip &lt;download url&gt;
+    curl -L -o terraform.zip <download url>
   </instruqt-code>
 </instruqt-code-group>
 
