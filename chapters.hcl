@@ -10,7 +10,7 @@ resource "chapter" "introduction" {
   }
 
   page "platform" {
-    file = "instructions/introduction/workshop_environment.md"
+    file = "instructions/introduction/workshop_environment.mdx"
   }
 
   page "outline" {
