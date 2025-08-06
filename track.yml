@@ -1,7 +1,8 @@
-slug: untitled-track-b63yfx
+slug: version-1-what-we-have-and-what-we-dont
 id: qimsxd6oe4v2
 revision: 1
-title: Untitled Track
+title: Instruqt Version 1
+teaser: This is to see what is included in current instruqt
 description: ""
 icon: ""
 tags: []
@@ -17,5 +18,8 @@ lab_config:
   hideStopButton: false
   feedback_recap_enabled: true
   feedback_tab_enabled: false
+  theme:
+    name: original
+  override_challenge_layout: false
   loadingMessages: true
 enhanced_loading: null
