@@ -1,1 +1,10 @@
 version: "3"
+containers:
+- name: dog
+  image: debian:stable
+  memory: 256
+  resources:
+    memory: 256
+secrets:
+- name: sdfds
+- name: BACKSLASH
